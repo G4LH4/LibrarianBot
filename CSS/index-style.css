@@ -1,0 +1,359 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap');
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body{
+    background-color: #A0B2ED;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+    overflow-x: hidden;    
+}
+
+
+
+.logo{
+   padding-left:10px;
+   font-size: 40px;
+   text-decoration: none;
+   color: #fff;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 8vh;
+    background: transparent;
+}
+
+.ham{
+    display: none;
+    cursor: pointer;
+    border: none;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+}
+
+.ham:hover{
+    transform: rotate(360deg);
+    transition: 0.2s 0.1s;
+}
+
+.ham span{
+    display: block;
+    background: #fff;
+    height: 3px;
+    width: 28px;
+    margin: 10px auto;
+    border-radius: 2px;
+}
+
+.enlaces-menu{
+    display: flex;
+    padding: 0;
+}
+
+
+.enlaces-menu li{
+    padding: 0 30px;
+    list-style: none;
+
+}
+
+.enlaces-menu li a{
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #fff;
+
+}
+
+.enlaces-menu li a#invite{
+    color: #5D71B0;
+    border-radius: 3px;
+}
+
+.enlaces-menu li a:hover{
+    color: #5D71B0;
+    transition: 0.6s;
+}
+
+.enlaces-menu li  a#invite:hover{
+    color: white;
+}
+
+
+
+/* DISPOSITIVOS MOVILES */
+
+@media (max-width: 768px) {
+
+    .logo{
+        padding-left: 25px;
+    }
+    .ham{
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 25px;
+    }
+    nav{
+        background-color: #24242c;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 0px;
+    }
+    .enlaces-menu{
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        height: 25vh;
+        margin-top: 16px;
+        padding: 0;
+        width: 100%;
+        display: none;
+        opacity: 0;
+    }
+
+}
+
+@keyframes muestraMenu {
+    from{opacity: 0;} 
+    to{opacity: 1;}
+}
+
+.enlaces-menu.activado{
+    display: flex;
+    animation: muestraMenu 350ms ease-in-out both;
+}
+
+.br-1.animado{
+    transform: rotate(-45deg) translate(-10px, 8px);
+}
+
+.br-2.animado{
+    opacity: 0;
+}
+
+.br-3.animado{
+    transform: rotate(45deg) translate(-10px, -8px);
+}
+
+/* CONTENIDO PRINCIPAL */
+
+.main-content { display: flex; flex-direction: column; }
+
+.main-content img{
+    margin-top: 2%;
+    width: 25%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    transition: 0.6s;
+}
+
+.main-content p{
+    transition: 0.6s;
+    text-align: center;
+    font-size: 4em;
+    color: white;
+    padding-top: 1px;
+}
+
+.main-content a{
+    align-self: center;
+    padding: 7px 16px;
+    font-size: 3em;
+    text-decoration: none;
+    font-weight: 400;
+    color: hsla(0,0%,100%,.8);
+    border-radius: 30px;
+    transition: border .18s ease-out 0s, background .18s ease-out 0s;
+    border: 2px solid hsla(0,0%,100%,.4);
+}
+
+.main-content a:hover{
+    background-color: #5D71B0;
+    transition: 0.6s;
+}
+
+.about{
+    margin-top: 5%;
+    background-size: cover;
+    background-color: #24242c;    
+}
+
+
+.about h1{
+    text-align: center;
+    color: #A0B2ED;
+    font-size: 5em;
+    padding-left: 2%;
+}
+
+.about h2{
+    color: white;
+    letter-spacing: 3px;
+    padding-top: 40px;
+    font-size: 2.4em;
+}
+
+.about p{
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    color: white;
+    padding-bottom: 13px;
+
+}
+
+.about img{
+    padding-top: 30px;
+    border-radius: 10px;
+    width: 30%;
+}
+
+.about p span{
+    font-family: 'Poppins', sans-serif;
+    border-radius: 3px;
+    background-color: #A0B2ED;
+    color: #fff;
+}
+
+.container{
+    text-align: center;
+    align-items: center;
+    padding-bottom: 5%;
+
+}
+
+.container blockquote{
+    width: 30%;
+    padding-top: 0.5px;
+    border-left: 5px solid #A0B2ED;
+    display: block;
+    margin-inline-end: 30%;
+    border-radius: 10px;
+    background-color: #2f3136;
+    color: white;
+    margin-left: 35%;
+    text-align: left;
+    padding-left: 10px;
+
+}
+
+@media (max-width: 768px) {
+    .container img{
+        width: 60%;
+    }
+    .container blockquote{
+        margin: auto;
+        width: auto;
+        align-items: center;
+    }
+    .main-content p{
+        font-size: 30px;
+        text-align: center;
+    }
+    .main-content a{
+        font-size: 20px;
+
+    }.main-content img{
+        width: 60%;
+    }
+    .about h1{
+        font-size: 3em;
+        text-align: center;
+        text-shadow: none;
+    }
+    .about h2{
+        font-size: 1.8em;
+    }
+    .about img{
+        width: 100%;
+        height:30% 
+    }
+
+
+}
+
+.container blockquote p{
+    font-size: 0.9em;
+}
+
+.donate{
+    padding-left: 2%;
+    padding-bottom: 3%;
+    text-align: center;
+    display: flex; flex-direction: column;
+}
+
+.donate h1{    
+    font-size: 3em;
+    color: white;
+}
+
+.donate p{
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    color: #fff;
+}
+
+.donate a{
+    align-self: center;
+    padding:10px;
+    font-size: 2em;
+    text-decoration: none;
+    font-weight: 400;
+    color: hsla(0,0%,100%,.8);
+    border-radius: 30px;
+    transition: border .18s ease-out 0s,background .18s ease-out 0s;
+    background: transparent;
+    border: 2px solid hsla(0,0%,100%,.4);
+}
+
+.donate a:hover{
+    background-color: #5D71B0;
+    transition: 0.6s;
+}
+
+
+.help{
+     padding-left: 2%;
+     text-align: center;
+}
+
+.help h1{
+    padding-top: 3%;    
+    font-size: 3em;
+    color: white;
+}
+
+.help p{
+    display: flex; 
+    flex-direction: column;
+    align-self: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 2em;
+    text-decoration: none;
+    color: #fff;
+}
+.copyright{
+    border-top: 1px solid #fff;
+    display: flex; 
+    flex-direction: column;
+    align-self: center;
+    text-align: center;
+    font-size: 10px;
+    text-align: center;
+    color: white;
+}
+
+
